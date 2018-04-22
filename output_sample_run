@@ -1,0 +1,15 @@
+orienit@ubuntu:/tmp$ hadoop fs -rm -r /home/orienit/testdb1
+18/04/22 11:21:11 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+Deleted /home/orienit/testdb1
+orienit@ubuntu:/tmp$ ./hive_table.sh 
+Enter Username for Source Server: user
+Enter Source IP:   34.218.59.54
+Enter full path for the file:  /tmp/testdb1.txt
+user@34.218.59.54's password: 
+***Copy to local destination successful***
+/tmp/testdb1.txt
+Creating directory and copying the source file to Hadoop! 
+Using hive to create table using below attribute information
+(uid int,name string,desg string)
+Created the table! now loading the data from source file****
+Data Imported Successfully

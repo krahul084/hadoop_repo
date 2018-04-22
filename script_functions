@@ -1,0 +1,33 @@
+copy_file() {
+        read -p "Enter Username for Source Server: " user
+        read -p "Enter Source IP:   " host_name
+        read -p "Enter full path for the file:  " source_path
+        filename=$(basename $source_path)
+
+        scp -rp $user@$host_name:$source_path /tmp/ 2>1> /dev/null
+
+        if [ $? -eq 0 ]; then
+            echo "***Copy to local destination successful***"
+        else
+            echo "Error in input parameters, Please provide proper inputs"
+            exit 1
+        fi
+}
+
+extract_info() {
+    path=$(/tmp/$filename)
+    if [ -f $path ]; then
+        variables=$(sed -n '1p' $path)
+        data_variables=$(sed -n '2p' $path)
+        IFS=':' read -r -a data <<< $variables
+        IFS=':' read -r -a data_attrib <<< $data_variables
+        sed -i '1,2d' $path
+        file_length=$(wc -l testdb1.txt| cut -d' ' -f1)
+        attribute_length=${#data[@]}
+        
+        
+            
+
+    
+    
+}

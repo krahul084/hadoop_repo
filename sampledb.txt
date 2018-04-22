@@ -1,0 +1,6 @@
+uid:name:desg
+int:string:string
+1101:Narendra Modi:Prime Minister
+1102:Donald Trump:President
+1103:Bill Clinton:President
+1104:Mahatma Gandhi:Leader
